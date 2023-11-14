@@ -1,6 +1,6 @@
 This Website is a Project for 4 university students, if you see unoptimized coding lines, now you know why
 
-Techs 
+"The Techs" 
 Tech Review the latest tech products and provide guides for using them.
 
 To build our HTML-based tech review website, initiate by structuring our plan and proceeding to craft HTML code for each page, 
