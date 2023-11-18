@@ -1,0 +1,48 @@
+=<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rated Products</title>
+    <link rel="stylesheet" type="text/css" href="Styles_Categories.css">
+</head>
+<body>
+    <div id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">About us</a>
+        <a href="Categories.html">Categories</a>
+        <a href="Categories_Television.html">Television</a>
+        <a href="Categories_Personal_Computer.html">Personal Computer</a>
+        <a href="Categories_Smartphone.html">Smartphone</a>
+        <a href="Categories_Digital_Camera.html">Digital Camera</a>
+        <a href="rated.html">Rated</a>
+        <a href="ContactUs.html">Contact us</a>
+    </div>
+
+    <div id="content">
+        <h1>Rated Products</h1>
+        <div id="rated-products-info"></div>
+    </div>
+
+    <script>
+        var ratedProducts = JSON.parse(localStorage.getItem('ratings')) || [];
+        var ratedProductsInfo = document.getElementById('rated-products-info');
+
+        if (ratedProducts.length > 0) {
+            ratedProducts.forEach(function(product, index) {
+                ratedProductsInfo.innerHTML += `
+                    <div class="rated-product">
+                        <h2>${product.name}</h2>
+                        <img src="${product.image}" alt="${product.name}">
+                        <p>${product.description}</p>
+                        <p>Rating: ${product.rating}</p>
+                    </div>
+                `;
+            });
+        } else {
+            ratedProductsInfo.innerHTML = '<p>No products rated.</p>';
+        }
+    </script>
+</body>
+</html>
+
